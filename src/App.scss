@@ -1,3 +1,11 @@
+$bpk-spacing-lg: 16px;
+$bpk-spacing-xl: 24px;
+$bpk-spacing-xxl: 32px;
+$bpk-spacing-base: 8px;
+$bpk-spacing-sm: 4px;
+$bpk-color-sky-gray-tint-90: #f5f7f9;
+$bpk-color-sky-blue-tint-90: #e5f0f9;
+
 @import '~bpk-mixins';
 
 @mixin container {
@@ -5,10 +13,14 @@
   margin: 0 auto;
 }
 
+@mixin custom-box-shadow {
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
 .App {
   text-align: center;
 
-  &__header {
+  &_header {
     padding: $bpk-spacing-lg * 2;
     background-color: $bpk-color-sky-blue;
     background-image: $bpk-primary-gradient;
@@ -41,5 +53,40 @@
 
   &__text {
     margin-bottom: $bpk-spacing-sm;
+  }
+
+  &__calendar {
+    margin: $bpk-spacing-xxl 0;
+
+    .bpk-calendar-grid {
+      @include custom-box-shadow;
+      border: 1px solid $bpk-color-sky-gray;
+    }
+
+    .bpk-calendar-week {
+      padding: $bpk-spacing-base 0;
+      background-color: $bpk-color-sky-gray-tint-90;
+    }
+
+    .bpk-calendar-date {
+      padding: $bpk-spacing-sm;
+      background-color: $bpk-color-white;
+      color: $bpk-color-sky-gray;
+      cursor: pointer;
+      @include bpk-border-radius-sm;
+
+      &:hover {
+        background-color: $bpk-color-sky-blue-tint-90;
+      }
+
+      &.bpk-calendar-date--selected {
+        background-color: $bpk-color-sky-blue;
+        color: $bpk-color-white;
+      }
+
+      &.bpk-calendar-date--today {
+        border: 2px solid $bpk-color-panjin;
+      }
+    }
   }
 }
