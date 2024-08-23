@@ -5,9 +5,11 @@
 > so please refer to [it's documentation](https://github.com/facebook/create-react-app/blob/master/packages/react-scripts/template/README.md)
 > for more usage information.
 
-# [_Put your project name here_]
+# Skyscanner-backpack-app
 
-[_Add a brief description of your project here._]
+A web app with a calendar functionality to enable travellers book their flight schedule
+
+The application uses backpack-react scripts, sass for styling and JavaScript
 
 ## npm script commands
 
